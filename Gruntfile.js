@@ -243,6 +243,15 @@ module.exports = function (grunt) {
       }
     },
 
+    casperjs: {
+      options: {
+        async: {
+            parallel: true
+        }
+      },
+      files: ['js/tests/casperjs/*.js']
+    },
+
     usebanner: {
       options: {
         position: 'top',
