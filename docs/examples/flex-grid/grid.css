@@ -1,10 +1,10 @@
 h4 {
   margin-top: 25px;
 }
-.row {
+.frow {
   margin-bottom: 20px;
 }
-.row .row {
+.frow .frow {
   margin-top: 10px;
   margin-bottom: 0;
 }
