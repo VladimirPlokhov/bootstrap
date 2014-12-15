@@ -42,16 +42,17 @@ function compareFilesInFolder(path, refFilePrefix, newFilePrefix) {
 }
 
 casper.start();
+casper.wait(1000, function() {
+    this.echo("Wait for Jekyll server");
+});
 casper.each(viewports, function(casper, viewport) {
-    casper.wait(1000, function() {
-        this.echo("Wait for Jekyll server");
-    });
     casper.thenOpen('http://0.0.0.0:9001/examples/grid/');
     casper.then(function() {
         this.viewport(viewport.viewport.width, viewport.viewport.height);
     });
     casper.then(function() {
-        casper.test.comment('Capture mode: Normal Grid, Viewport: ' + viewport.name);
+
+        casper.test.comment('Capture mode: Default Grid (Normal Container), Viewport: ' + viewport.name);
         captureInVP('.test-three-equal-columns', 'normal-grid-three-equal-columns.png', viewport.name, SNAPSHOT_FOLDER);
         captureInVP('.test-three-unequal-columns', 'normal-grid-three-unequal-columns.png', viewport.name, SNAPSHOT_FOLDER);
         captureInVP('.test-two-columns', 'normal-grid-two-columns.png', viewport.name, SNAPSHOT_FOLDER);
@@ -63,10 +64,24 @@ casper.each(viewports, function(casper, viewport) {
         captureInVP('.test-column-wrapping', 'normal-grid-column-wrapping.png', viewport.name, SNAPSHOT_FOLDER);
         captureInVP('.test-nesting-columns', 'normal-grid-nesting-columns.png', viewport.name, SNAPSHOT_FOLDER);
         captureInVP('.test-column-ordering', 'normal-grid-column-ordering.png', viewport.name, SNAPSHOT_FOLDER);
+
+        casper.test.comment('Capture mode: Default Grid (Fluid Container), Viewport: ' + viewport.name);
+        captureInVP('.test-fluid-three-equal-columns', 'normal-grid-fluid-three-equal-columns.png', viewport.name, SNAPSHOT_FOLDER);
+        captureInVP('.test-fluid-three-unequal-columns', 'normal-grid-fluid-three-unequal-columns.png', viewport.name, SNAPSHOT_FOLDER);
+        captureInVP('.test-fluid-two-columns', 'normal-grid-fluid-two-columns.png', viewport.name, SNAPSHOT_FOLDER);
+        captureInVP('.test-fluid-two-columns-with-two-nested-columns', 'normal-grid-fluid-two-columns-with-two-nested-columns.png', viewport.name, SNAPSHOT_FOLDER);
+        captureInVP('.test-fluid-mixed-mobile-desktop', 'normal-grid-fluid-mixed-mobile-desktop.png', viewport.name, SNAPSHOT_FOLDER);
+        captureInVP('.test-fluid-mixed-mobile-tablet-desktop', 'normal-grid-fluid-mixed-mobile-tablet-desktop.png', viewport.name, SNAPSHOT_FOLDER);
+        captureInVP('.test-fluid-column-clearing', 'normal-grid-fluid-column-clearing.png', viewport.name, SNAPSHOT_FOLDER);
+        captureInVP('.test-fluid-offset-push-pull', 'normal-grid-fluid-offset-push-pull.png', viewport.name, SNAPSHOT_FOLDER);
+        captureInVP('.test-fluid-column-wrapping', 'normal-grid-fluid-column-wrapping.png', viewport.name, SNAPSHOT_FOLDER);
+        captureInVP('.test-fluid-nesting-columns', 'normal-grid-fluid-nesting-columns.png', viewport.name, SNAPSHOT_FOLDER);
+        captureInVP('.test-fluid-column-ordering', 'normal-grid-fluid-column-ordering.png', viewport.name, SNAPSHOT_FOLDER);
     });
     casper.thenOpen('http://0.0.0.0:9001/examples/flex-grid/');
     casper.then(function() {
-        casper.test.comment('Capture mode: Flex Grid, Viewport: ' + viewport.name);
+
+        casper.test.comment('Capture mode: Flex Grid (Normal Container), Viewport: ' + viewport.name);
         captureInVP('.test-three-equal-columns', 'flex-grid-three-equal-columns.png', viewport.name, SNAPSHOT_FOLDER);
         captureInVP('.test-three-unequal-columns', 'flex-grid-three-unequal-columns.png', viewport.name, SNAPSHOT_FOLDER);
         captureInVP('.test-two-columns', 'flex-grid-two-columns.png', viewport.name, SNAPSHOT_FOLDER);
@@ -78,6 +93,19 @@ casper.each(viewports, function(casper, viewport) {
         captureInVP('.test-column-wrapping', 'flex-grid-column-wrapping.png', viewport.name, SNAPSHOT_FOLDER);
         captureInVP('.test-nesting-columns', 'flex-grid-nesting-columns.png', viewport.name, SNAPSHOT_FOLDER);
         captureInVP('.test-column-ordering', 'flex-grid-column-ordering.png', viewport.name, SNAPSHOT_FOLDER);
+
+        casper.test.comment('Capture mode: Flex Grid (Fluid Container), Viewport: ' + viewport.name);
+        captureInVP('.test-fluid-three-equal-columns', 'flex-grid-fluid-three-equal-columns.png', viewport.name, SNAPSHOT_FOLDER);
+        captureInVP('.test-fluid-three-unequal-columns', 'flex-grid-fluid-three-unequal-columns.png', viewport.name, SNAPSHOT_FOLDER);
+        captureInVP('.test-fluid-two-columns', 'flex-grid-fluid-two-columns.png', viewport.name, SNAPSHOT_FOLDER);
+        captureInVP('.test-fluid-two-columns-with-two-nested-columns', 'flex-grid-fluid-two-columns-with-two-nested-columns.png', viewport.name, SNAPSHOT_FOLDER);
+        captureInVP('.test-fluid-mixed-mobile-desktop', 'flex-grid-fluid-mixed-mobile-desktop.png', viewport.name, SNAPSHOT_FOLDER);
+        captureInVP('.test-fluid-mixed-mobile-tablet-desktop', 'flex-grid-fluid-mixed-mobile-tablet-desktop.png', viewport.name, SNAPSHOT_FOLDER);
+        captureInVP('.test-fluid-column-clearing', 'flex-grid-fluid-column-clearing.png', viewport.name, SNAPSHOT_FOLDER);
+        captureInVP('.test-fluid-offset-push-pull', 'flex-grid-fluid-offset-push-pull.png', viewport.name, SNAPSHOT_FOLDER);
+        captureInVP('.test-fluid-column-wrapping', 'flex-grid-fluid-column-wrapping.png', viewport.name, SNAPSHOT_FOLDER);
+        captureInVP('.test-fluid-nesting-columns', 'flex-grid-fluid-nesting-columns.png', viewport.name, SNAPSHOT_FOLDER);
+        captureInVP('.test-fluid-column-ordering', 'flex-grid-fluid-column-ordering.png', viewport.name, SNAPSHOT_FOLDER);
     });
     casper.then(function() {
         casper.test.comment('Image comparison... Viewport: ' + viewport.name);

@@ -315,7 +315,7 @@ module.exports = function (grunt) {
 
     concurrent: {
       options: {
-        logConcurrentOutput: false
+        logConcurrentOutput: true
        },
        gridTest: ['shell:jekyllServe', 'casper:flexbox']
     },
@@ -511,7 +511,7 @@ module.exports = function (grunt) {
   grunt.registerTask('docs', ['docs-css', 'lint-docs-css', 'docs-js', 'lint-docs-js', 'clean:docs', 'copy:docs', 'build-customizer']);
 
   grunt.registerTask('prep-release', ['jekyll:github', 'compress']);
-  grunt.registerTask('vr-test', ['concurrent:gridTest']);
+  grunt.registerTask('vr-test', ['dist-css', 'copy:docs', 'concurrent:gridTest']);
 
   // Task for updating the cached npm packages used by the Travis build (which are controlled by test-infra/npm-shrinkwrap.json).
   // This task should be run and the updated file should be committed whenever Bootstrap's dependencies change.
