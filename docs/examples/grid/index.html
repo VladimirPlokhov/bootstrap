@@ -148,6 +148,52 @@
         </div>
       </div>
 
+      <hr>
+
+      <h3>Column wrapping</h3>
+      <p>If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.</p>
+      <div class="row test-column-wrapping">
+        <div class="col-xs-9">.col-xs-9</div>
+        <div class="col-xs-4">.col-xs-4<br>Since 9 + 4 = 13 &gt; 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.</div>
+        <div class="col-xs-6">.col-xs-6<br>Subsequent columns continue along the new line.</div>
+      </div>
+
+      <hr>
+
+      <h3>Nesting columns</h3>
+      <p>To nest your content with the default grid, add a new <code>.row</code> and set of <code>.col-sm-*</code> columns within an existing <code>.col-sm-*</code> column. Nested rows should include a set of columns that add up to 12 or less (it is not required that you use all 12 available columns).</p>
+      <div class="row test-nesting-columns">
+        <div class="col-sm-9">
+          Level 1: .col-sm-9
+          <div class="row">
+            <div class="col-xs-8 col-sm-6">
+              Level 2: .col-xs-8 .col-sm-6
+            </div>
+            <div class="col-xs-4 col-sm-6">
+              Level 2: .col-xs-4 .col-sm-6
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <h3>Column ordering</h3>
+      <p>Easily change the order of our built-in grid columns with <code>.col-md-push-*</code> and <code>.col-md-pull-*</code> modifier classes.</p>
+      <div class="row test-column-ordering">
+        <div class="col-sm-9">
+          Level 1: .col-sm-9
+          <div class="row">
+            <div class="col-xs-8 col-sm-6">
+              Level 2: .col-xs-8 .col-sm-6
+            </div>
+            <div class="col-xs-4 col-sm-6">
+              Level 2: .col-xs-4 .col-sm-6
+            </div>
+          </div>
+        </div>
+      </div>
+
 
     </div> <!-- /container -->
 
