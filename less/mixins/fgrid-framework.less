@@ -21,6 +21,7 @@
       // Inner gutter via padding
       padding-left:  (@fgrid-gutter-width / 2);
       padding-right: (@fgrid-gutter-width / 2);
+      box-sizing: border-box;
     }
   }
   .fcol(1); // kickstart it
@@ -35,17 +36,12 @@
     @item: ~".fcol-@{class}-@{index}";
     .fcol((@index + 1), ~"@{list}, @{item}");
   }
-  .fcol(@index, @list) when (@index > @fgrid-columns) { // terminal
-    @{list} {
-      float: left;
-    }
-  }
   .fcol(1); // kickstart it
 }
 
 .calc-fgrid-column(@index, @class, @type) when (@type = width) and (@index > 0) {
   .fcol-@{class}-@{index} {
-    width: percentage((@index / @fgrid-columns));
+    flex-basis: percentage((@index / @fgrid-columns)) !important;
   }
 }
 .calc-fgrid-column(@index, @class, @type) when (@type = push) and (@index > 0) {
