@@ -40,3 +40,7 @@ validation-status.json
 # Folders to ignore
 bower_components
 node_modules
+test-snapshots
+
+# Reports to ignore
+js/tests/casperjs/casper-results.xml

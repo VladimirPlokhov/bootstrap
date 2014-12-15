@@ -1,0 +1,87 @@
+// Framework grid generation
+//
+// Used only by Flexbox fork of Bootstrap to generate the correct number of grid classes given
+// any value of `@fgrid-columns`.
+
+.make-fgrid-columns() {
+  // Common styles for all sizes of grid columns, widths 1-12
+  .fcol(@index) { // initial
+    @item: ~".fcol-xs-@{index}, .fcol-sm-@{index}, .fcol-md-@{index}, .fcol-lg-@{index}";
+    .fcol((@index + 1), @item);
+  }
+  .fcol(@index, @list) when (@index =< @fgrid-columns) { // general; "=<" isn't a typo
+    @item: ~".fcol-xs-@{index}, .fcol-sm-@{index}, .fcol-md-@{index}, .fcol-lg-@{index}";
+    .fcol((@index + 1), ~"@{list}, @{item}");
+  }
+  .fcol(@index, @list) when (@index > @fgrid-columns) { // terminal
+    @{list} {
+      position: relative;
+      // Prevent columns from collapsing when empty
+      min-height: 1px;
+      // Inner gutter via padding
+      padding-left:  (@fgrid-gutter-width / 2);
+      padding-right: (@fgrid-gutter-width / 2);
+      box-sizing: border-box;
+    }
+  }
+  .fcol(1); // kickstart it
+}
+
+.float-fgrid-columns(@class) {
+  .fcol(@index) { // initial
+    @item: ~".fcol-@{class}-@{index}";
+    .fcol((@index + 1), @item);
+  }
+  .fcol(@index, @list) when (@index =< @fgrid-columns) { // general
+    @item: ~".fcol-@{class}-@{index}";
+    .fcol((@index + 1), ~"@{list}, @{item}");
+  }
+  .fcol(1); // kickstart it
+}
+
+.calc-fgrid-column(@index, @class, @type) when (@type = width) and (@index > 0) {
+  .fcol-@{class}-@{index} {
+    flex-basis: percentage((@index / @fgrid-columns)) !important;
+  }
+}
+.calc-fgrid-column(@index, @class, @type) when (@type = push) and (@index > 0) {
+  .fcol-@{class}-push-@{index} {
+    left: percentage((@index / @fgrid-columns));
+  }
+}
+.calc-fgrid-column(@index, @class, @type) when (@type = push) and (@index = 0) {
+  .fcol-@{class}-push-0 {
+    left: auto;
+  }
+}
+.calc-fgrid-column(@index, @class, @type) when (@type = pull) and (@index > 0) {
+  .fcol-@{class}-pull-@{index} {
+    right: percentage((@index / @fgrid-columns));
+  }
+}
+.calc-fgrid-column(@index, @class, @type) when (@type = pull) and (@index = 0) {
+  .fcol-@{class}-pull-0 {
+    right: auto;
+  }
+}
+.calc-fgrid-column(@index, @class, @type) when (@type = offset) {
+  .fcol-@{class}-offset-@{index} {
+    margin-left: percentage((@index / @fgrid-columns));
+  }
+}
+
+// Basic looping in LESS
+.loop-fgrid-columns(@index, @class, @type) when (@index >= 0) {
+  .calc-fgrid-column(@index, @class, @type);
+  // next iteration
+  .loop-fgrid-columns((@index - 1), @class, @type);
+}
+
+// Create grid for specific class
+.make-fgrid(@class) {
+  .float-fgrid-columns(@class);
+  .loop-fgrid-columns(@fgrid-columns, @class, width);
+  .loop-fgrid-columns(@fgrid-columns, @class, pull);
+  .loop-fgrid-columns(@fgrid-columns, @class, push);
+  .loop-fgrid-columns(@fgrid-columns, @class, offset);
+}

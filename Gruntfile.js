@@ -243,6 +243,18 @@ module.exports = function (grunt) {
       }
     },
 
+    casper: {
+      flexbox : {
+        options : {
+          test : true,
+          engine : 'slimerjs'
+        },
+        files: {
+          'js/tests/casperjs/casper-results.xml' : ['js/tests/casperjs/*.js']
+        }
+      }
+    },
+
     usebanner: {
       options: {
         position: 'top',
@@ -293,6 +305,19 @@ module.exports = function (grunt) {
           base: '.'
         }
       }
+    },
+
+    shell: {
+      jekyllServe: {
+          command: 'jekyll serve'
+      }
+    },
+
+    concurrent: {
+      options: {
+        logConcurrentOutput: true
+       },
+       gridTest: ['shell:jekyllServe', 'casper:flexbox']
     },
 
     jekyll: {
@@ -486,6 +511,7 @@ module.exports = function (grunt) {
   grunt.registerTask('docs', ['docs-css', 'lint-docs-css', 'docs-js', 'lint-docs-js', 'clean:docs', 'copy:docs', 'build-customizer']);
 
   grunt.registerTask('prep-release', ['jekyll:github', 'compress']);
+  grunt.registerTask('vr-test', ['dist-css', 'copy:docs', 'concurrent:gridTest']);
 
   // Task for updating the cached npm packages used by the Travis build (which are controlled by test-infra/npm-shrinkwrap.json).
   // This task should be run and the updated file should be committed whenever Bootstrap's dependencies change.

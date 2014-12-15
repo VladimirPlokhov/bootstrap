@@ -1,0 +1,124 @@
+// Flexbox based Grid system
+//
+// Generate semantic grid columns with these mixins.
+
+// Centered container element
+.fcontainer-fixed(@gutter: @fgrid-gutter-width) {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left:  (@gutter / 2);
+  padding-right: (@gutter / 2);
+}
+
+// Creates a wrapper for a series of columns
+.make-frow(@gutter: @fgrid-gutter-width) {
+  margin-left:  (@gutter / -2);
+  margin-right: (@gutter / -2);
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  align-items: flex-start;
+  &>div[class^="fcol-"] {
+    flex-basis: 100%;
+  }
+}
+
+// Generate the extra small columns
+.make-xs-fcolumn(@columns; @gutter: @fgrid-gutter-width) {
+  position: relative;
+  flex-basis: percentage((@columns / @fgrid-columns)) !important;
+  min-height: 1px;
+  padding-left:  (@gutter / 2);
+  padding-right: (@gutter / 2);
+}
+.make-xs-fcolumn-offset(@columns) {
+  margin-left: percentage((@columns / @fgrid-columns));
+}
+.make-xs-fcolumn-push(@columns) {
+  left: percentage((@columns / @fgrid-columns));
+}
+.make-xs-fcolumn-pull(@columns) {
+  right: percentage((@columns / @fgrid-columns));
+}
+
+// Generate the small columns
+.make-sm-fcolumn(@columns; @gutter: @fgrid-gutter-width) {
+  position: relative;
+  min-height: 1px;
+  padding-left:  (@gutter / 2);
+  padding-right: (@gutter / 2);
+
+  @media (min-width: @screen-sm-min) {
+    flex-basis: percentage((@columns / @fgrid-columns)) !important;
+  }
+}
+.make-sm-fcolumn-offset(@columns) {
+  @media (min-width: @screen-sm-min) {
+    margin-left: percentage((@columns / @fgrid-columns));
+  }
+}
+.make-sm-fcolumn-push(@columns) {
+  @media (min-width: @screen-sm-min) {
+    left: percentage((@columns / @fgrid-columns));
+  }
+}
+.make-sm-fcolumn-pull(@columns) {
+  @media (min-width: @screen-sm-min) {
+    right: percentage((@columns / @fgrid-columns));
+  }
+}
+
+// Generate the medium columns
+.make-md-fcolumn(@columns; @gutter: @fgrid-gutter-width) {
+  position: relative;
+  min-height: 1px;
+  padding-left:  (@gutter / 2);
+  padding-right: (@gutter / 2);
+
+  @media (min-width: @screen-md-min) {
+    flex-basis: percentage((@columns / @fgrid-columns)) !important;
+  }
+}
+.make-md-fcolumn-offset(@columns) {
+  @media (min-width: @screen-md-min) {
+    margin-left: percentage((@columns / @fgrid-columns));
+  }
+}
+.make-md-fcolumn-push(@columns) {
+  @media (min-width: @screen-md-min) {
+    left: percentage((@columns / @fgrid-columns));
+  }
+}
+.make-md-fcolumn-pull(@columns) {
+  @media (min-width: @screen-md-min) {
+    right: percentage((@columns / @fgrid-columns));
+  }
+}
+
+// Generate the large columns
+.make-lg-fcolumn(@columns; @gutter: @fgrid-gutter-width) {
+  position: relative;
+  min-height: 1px;
+  padding-left:  (@gutter / 2);
+  padding-right: (@gutter / 2);
+
+  @media (min-width: @screen-lg-min) {
+    flex-basis: percentage((@columns / @fgrid-columns)) !important;
+  }
+}
+.make-lg-fcolumn-offset(@columns) {
+  @media (min-width: @screen-lg-min) {
+    margin-left: percentage((@columns / @fgrid-columns));
+  }
+}
+.make-lg-fcolumn-push(@columns) {
+  @media (min-width: @screen-lg-min) {
+    left: percentage((@columns / @fgrid-columns));
+  }
+}
+.make-lg-fcolumn-pull(@columns) {
+  @media (min-width: @screen-lg-min) {
+    right: percentage((@columns / @fgrid-columns));
+  }
+}

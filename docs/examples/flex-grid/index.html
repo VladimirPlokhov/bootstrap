@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Grid Template for Bootstrap</title>
+    <title>Flexbox Grid Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -28,34 +28,34 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="fcontainer">
 
       <div class="page-header">
-        <h1>Bootstrap grid examples - Normal container</h1>
+        <h1>Flexbox grid examples - Normal container</h1>
         <p class="lead">Basic grid layouts to get you familiar with building within the Bootstrap grid system. This is example of normal container.</p>
       </div>
 
       <h3>Three equal columns</h3>
       <p>Get three equal-width columns <strong>starting at desktops and scaling to large desktops</strong>. On mobile devices, tablets and below, the columns will automatically stack.</p>
-      <div class="row test-three-equal-columns">
-        <div class="col-md-4">.col-md-4</div>
-        <div class="col-md-4">.col-md-4</div>
-        <div class="col-md-4">.col-md-4</div>
+      <div class="frow test-three-equal-columns">
+        <div class="fcol-md-4">.col-md-4</div>
+        <div class="fcol-md-4">.col-md-4</div>
+        <div class="fcol-md-4">.col-md-4</div>
       </div>
 
       <h3>Three unequal columns</h3>
       <p>Get three columns <strong>starting at desktops and scaling to large desktops</strong> of various widths. Remember, grid columns should add up to twelve for a single horizontal block. More than that, and columns start stacking no matter the viewport.</p>
-      <div class="row test-three-unequal-columns">
-        <div class="col-md-3">.col-md-3</div>
-        <div class="col-md-6">.col-md-6</div>
-        <div class="col-md-3">.col-md-3</div>
+      <div class="frow test-three-unequal-columns">
+        <div class="fcol-md-3">.col-md-3</div>
+        <div class="fcol-md-6">.col-md-6</div>
+        <div class="fcol-md-3">.col-md-3</div>
       </div>
 
       <h3>Two columns</h3>
       <p>Get two columns <strong>starting at desktops and scaling to large desktops</strong>.</p>
-      <div class="row test-two-columns">
-        <div class="col-md-8">.col-md-8</div>
-        <div class="col-md-4">.col-md-4</div>
+      <div class="frow test-two-columns">
+        <div class="fcol-md-8">.col-md-8</div>
+        <div class="fcol-md-4">.col-md-4</div>
       </div>
 
       <h3>Full width, single column</h3>
@@ -66,15 +66,15 @@
       <h3>Two columns with two nested columns</h3>
       <p>Per the documentation, nesting is easy—just put a row of columns within an existing column. This gives you two columns <strong>starting at desktops and scaling to large desktops</strong>, with another two (equal widths) within the larger column.</p>
       <p>At mobile device sizes, tablets and down, these columns and their nested columns will stack.</p>
-      <div class="row test-two-columns-with-two-nested-columns">
-        <div class="col-md-8">
+      <div class="frow test-two-columns-with-two-nested-columns">
+        <div class="fcol-md-8">
           .col-md-8
-          <div class="row">
-            <div class="col-md-6">.col-md-6</div>
-            <div class="col-md-6">.col-md-6</div>
+          <div class="frow">
+            <div class="fcol-md-6">.col-md-6</div>
+            <div class="fcol-md-6">.col-md-6</div>
           </div>
         </div>
-        <div class="col-md-4">.col-md-4</div>
+        <div class="fcol-md-4">.col-md-4</div>
       </div>
 
       <hr>
@@ -83,18 +83,18 @@
       <p>The Bootstrap 3 grid system has four tiers of classes: xs (phones), sm (tablets), md (desktops), and lg (larger desktops). You can use nearly any combination of these classes to create more dynamic and flexible layouts.</p>
       <p>Each tier of classes scales up, meaning if you plan on setting the same widths for xs and sm, you only need to specify xs.</p>
       <div class="test-mixed-mobile-desktop">
-        <div class="row">
-          <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
-          <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+        <div class="frow">
+          <div class="fcol-xs-12 fcol-md-8">.col-xs-12 .col-md-8</div>
+          <div class="fcol-xs-6 fcol-md-4">.col-xs-6 .col-md-4</div>
         </div>
-        <div class="row">
-          <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-          <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-          <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+        <div class="frow">
+          <div class="fcol-xs-6 fcol-md-4">.col-xs-6 .col-md-4</div>
+          <div class="fcol-xs-6 fcol-md-4">.col-xs-6 .col-md-4</div>
+          <div class="fcol-xs-6 fcol-md-4">.col-xs-6 .col-md-4</div>
         </div>
-        <div class="row">
-          <div class="col-xs-6">.col-xs-6</div>
-          <div class="col-xs-6">.col-xs-6</div>
+        <div class="frow">
+          <div class="fcol-xs-6">.col-xs-6</div>
+          <div class="fcol-xs-6">.col-xs-6</div>
         </div>
       </div>
 
@@ -103,14 +103,14 @@
       <h3>Mixed: mobile, tablet, and desktop</h3>
       <p></p>
       <div class="test-mixed-mobile-tablet-desktop">
-        <div class="row">
-          <div class="col-xs-12 col-sm-6 col-lg-8">.col-xs-12 .col-sm-6 .col-lg-8</div>
-          <div class="col-xs-6 col-lg-4">.col-xs-6 .col-lg-4</div>
+        <div class="frow">
+          <div class="fcol-xs-12 fcol-sm-6 fcol-lg-8">.col-xs-12 .col-sm-6 .col-lg-8</div>
+          <div class="fcol-xs-6 fcol-lg-4">.col-xs-6 .col-lg-4</div>
         </div>
-        <div class="row">
-          <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
-          <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
-          <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+        <div class="frow">
+          <div class="fcol-xs-6 fcol-sm-4">.col-xs-6 .col-sm-4</div>
+          <div class="fcol-xs-6 fcol-sm-4">.col-xs-6 .col-sm-4</div>
+          <div class="fcol-xs-6 fcol-sm-4">.col-xs-6 .col-sm-4</div>
         </div>
       </div>
 
@@ -118,19 +118,19 @@
 
       <h3>Column clearing</h3>
       <p><a href="http://getbootstrap.com/css/#grid-responsive-resets">Clear floats</a> at specific breakpoints to prevent awkward wrapping with uneven content.</p>
-      <div class="row test-column-clearing">
-        <div class="col-xs-6 col-sm-3">
+      <div class="frow test-column-clearing">
+        <div class="fcol-xs-6 fcol-sm-3">
           .col-xs-6 .col-sm-3
           <br>
           Resize your viewport or check it out on your phone for an example.
         </div>
-        <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+        <div class="fcol-xs-6 fcol-sm-3">.col-xs-6 .col-sm-3</div>
 
         <!-- Add the extra clearfix for only the required viewport -->
         <div class="clearfix visible-xs"></div>
 
-        <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
-        <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+        <div class="fcol-xs-6 fcol-sm-3">.col-xs-6 .col-sm-3</div>
+        <div class="fcol-xs-6 fcol-sm-3">.col-xs-6 .col-sm-3</div>
       </div>
 
       <hr>
@@ -138,13 +138,13 @@
       <h3>Offset, push, and pull resets</h3>
       <p>Reset offsets, pushes, and pulls at specific breakpoints.</p>
       <div class="test-offset-push-pull">
-        <div class="row">
-          <div class="col-sm-5 col-md-6">.col-sm-5 .col-md-6</div>
-          <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">.col-sm-5 .col-sm-offset-2 .col-md-6 .col-md-offset-0</div>
+        <div class="frow">
+          <div class="fcol-sm-5 fcol-md-6">.col-sm-5 .col-md-6</div>
+          <div class="fcol-sm-5 fcol-sm-offset-2 fcol-md-6 fcol-md-offset-0">.col-sm-5 .col-sm-offset-2 .col-md-6 .col-md-offset-0</div>
         </div>
-        <div class="row">
-          <div class="col-sm-6 col-md-5 col-lg-6">.col-sm-6 .col-md-5 .col-lg-6</div>
-          <div class="col-sm-6 col-md-5 col-md-offset-2 col-lg-6 col-lg-offset-0">.col-sm-6 .col-md-5 .col-md-offset-2 .col-lg-6 .col-lg-offset-0</div>
+        <div class="frow">
+          <div class="fcol-sm-6 fcol-md-5 fcol-lg-6">.col-sm-6 .col-md-5 .col-lg-6</div>
+          <div class="fcol-sm-6 fcol-md-5 fcol-md-offset-2 fcol-lg-6 fcol-lg-offset-0">.col-sm-6 .col-md-5 .col-md-offset-2 .col-lg-6 .col-lg-offset-0</div>
         </div>
       </div>
 
@@ -152,24 +152,24 @@
 
       <h3>Column wrapping</h3>
       <p>If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.</p>
-      <div class="row test-column-wrapping">
-        <div class="col-xs-9">.col-xs-9</div>
-        <div class="col-xs-4">.col-xs-4<br>Since 9 + 4 = 13 &gt; 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.</div>
-        <div class="col-xs-6">.col-xs-6<br>Subsequent columns continue along the new line.</div>
+      <div class="frow test-column-wrapping">
+        <div class="fcol-xs-9">.col-xs-9</div>
+        <div class="fcol-xs-4">.col-xs-4<br>Since 9 + 4 = 13 &gt; 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.</div>
+        <div class="fcol-xs-6">.col-xs-6<br>Subsequent columns continue along the new line.</div>
       </div>
 
       <hr>
 
       <h3>Nesting columns</h3>
       <p>To nest your content with the default grid, add a new <code>.row</code> and set of <code>.col-sm-*</code> columns within an existing <code>.col-sm-*</code> column. Nested rows should include a set of columns that add up to 12 or less (it is not required that you use all 12 available columns).</p>
-      <div class="row test-nesting-columns">
-        <div class="col-sm-9">
+      <div class="frow test-nesting-columns">
+        <div class="fcol-sm-9">
           Level 1: .col-sm-9
-          <div class="row">
-            <div class="col-xs-8 col-sm-6">
+          <div class="frow">
+            <div class="fcol-xs-8 fcol-sm-6">
               Level 2: .col-xs-8 .col-sm-6
             </div>
-            <div class="col-xs-4 col-sm-6">
+            <div class="fcol-xs-4 fcol-sm-6">
               Level 2: .col-xs-4 .col-sm-6
             </div>
           </div>
@@ -180,45 +180,44 @@
 
       <h3>Column ordering</h3>
       <p>Easily change the order of our built-in grid columns with <code>.col-md-push-*</code> and <code>.col-md-pull-*</code> modifier classes.</p>
-      <div class="row test-column-ordering">
-        <div class="col-md-4 col-md-push-4">B</div>
-        <div class="col-md-4 col-md-pull-4 col-sm-6">A</div>
-        <div class="col-md-4 col-sm-6">C</div>
+      <div class="frow test-column-ordering">
+        <div class="fcol-md-4 fcol-md-push-4">B</div>
+        <div class="fcol-md-4 fcol-md-pull-4 fcol-sm-6">A</div>
+        <div class="fcol-md-4 fcol-sm-6">C</div>
       </div>
-
 
 
     </div> <!-- /container -->
 
 
-    <div class="container-fluid">
+    <div class="fcontainer-fluid">
 
       <div class="page-header">
-        <h1>Bootstrap grid examples - Fluid container</h1>
+        <h1>Flexbox grid examples - Fluid container</h1>
         <p class="lead">Basic grid layouts to get you familiar with building within the Bootstrap grid system. This is example of fluid container.</p>
       </div>
 
       <h3>Three equal columns</h3>
       <p>Get three equal-width columns <strong>starting at desktops and scaling to large desktops</strong>. On mobile devices, tablets and below, the columns will automatically stack.</p>
-      <div class="row test-fluid-three-equal-columns">
-        <div class="col-md-4">.col-md-4</div>
-        <div class="col-md-4">.col-md-4</div>
-        <div class="col-md-4">.col-md-4</div>
+      <div class="frow test-fluid-three-equal-columns">
+        <div class="fcol-md-4">.col-md-4</div>
+        <div class="fcol-md-4">.col-md-4</div>
+        <div class="fcol-md-4">.col-md-4</div>
       </div>
 
       <h3>Three unequal columns</h3>
       <p>Get three columns <strong>starting at desktops and scaling to large desktops</strong> of various widths. Remember, grid columns should add up to twelve for a single horizontal block. More than that, and columns start stacking no matter the viewport.</p>
-      <div class="row test-fluid-three-unequal-columns">
-        <div class="col-md-3">.col-md-3</div>
-        <div class="col-md-6">.col-md-6</div>
-        <div class="col-md-3">.col-md-3</div>
+      <div class="frow test-fluid-three-unequal-columns">
+        <div class="fcol-md-3">.col-md-3</div>
+        <div class="fcol-md-6">.col-md-6</div>
+        <div class="fcol-md-3">.col-md-3</div>
       </div>
 
       <h3>Two columns</h3>
       <p>Get two columns <strong>starting at desktops and scaling to large desktops</strong>.</p>
-      <div class="row test-fluid-two-columns">
-        <div class="col-md-8">.col-md-8</div>
-        <div class="col-md-4">.col-md-4</div>
+      <div class="frow test-fluid-two-columns">
+        <div class="fcol-md-8">.col-md-8</div>
+        <div class="fcol-md-4">.col-md-4</div>
       </div>
 
       <h3>Full width, single column</h3>
@@ -229,15 +228,15 @@
       <h3>Two columns with two nested columns</h3>
       <p>Per the documentation, nesting is easy—just put a row of columns within an existing column. This gives you two columns <strong>starting at desktops and scaling to large desktops</strong>, with another two (equal widths) within the larger column.</p>
       <p>At mobile device sizes, tablets and down, these columns and their nested columns will stack.</p>
-      <div class="row test-fluid-two-columns-with-two-nested-columns">
-        <div class="col-md-8">
+      <div class="frow test-fluid-two-columns-with-two-nested-columns">
+        <div class="fcol-md-8">
           .col-md-8
-          <div class="row">
-            <div class="col-md-6">.col-md-6</div>
-            <div class="col-md-6">.col-md-6</div>
+          <div class="frow">
+            <div class="fcol-md-6">.col-md-6</div>
+            <div class="fcol-md-6">.col-md-6</div>
           </div>
         </div>
-        <div class="col-md-4">.col-md-4</div>
+        <div class="fcol-md-4">.col-md-4</div>
       </div>
 
       <hr>
@@ -246,18 +245,18 @@
       <p>The Bootstrap 3 grid system has four tiers of classes: xs (phones), sm (tablets), md (desktops), and lg (larger desktops). You can use nearly any combination of these classes to create more dynamic and flexible layouts.</p>
       <p>Each tier of classes scales up, meaning if you plan on setting the same widths for xs and sm, you only need to specify xs.</p>
       <div class="test-fluid-mixed-mobile-desktop">
-        <div class="row">
-          <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
-          <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+        <div class="frow">
+          <div class="fcol-xs-12 fcol-md-8">.col-xs-12 .col-md-8</div>
+          <div class="fcol-xs-6 fcol-md-4">.col-xs-6 .col-md-4</div>
         </div>
-        <div class="row">
-          <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-          <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-          <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+        <div class="frow">
+          <div class="fcol-xs-6 fcol-md-4">.col-xs-6 .col-md-4</div>
+          <div class="fcol-xs-6 fcol-md-4">.col-xs-6 .col-md-4</div>
+          <div class="fcol-xs-6 fcol-md-4">.col-xs-6 .col-md-4</div>
         </div>
-        <div class="row">
-          <div class="col-xs-6">.col-xs-6</div>
-          <div class="col-xs-6">.col-xs-6</div>
+        <div class="frow">
+          <div class="fcol-xs-6">.col-xs-6</div>
+          <div class="fcol-xs-6">.col-xs-6</div>
         </div>
       </div>
 
@@ -266,14 +265,14 @@
       <h3>Mixed: mobile, tablet, and desktop</h3>
       <p></p>
       <div class="test-fluid-mixed-mobile-tablet-desktop">
-        <div class="row">
-          <div class="col-xs-12 col-sm-6 col-lg-8">.col-xs-12 .col-sm-6 .col-lg-8</div>
-          <div class="col-xs-6 col-lg-4">.col-xs-6 .col-lg-4</div>
+        <div class="frow">
+          <div class="fcol-xs-12 fcol-sm-6 fcol-lg-8">.col-xs-12 .col-sm-6 .col-lg-8</div>
+          <div class="fcol-xs-6 fcol-lg-4">.col-xs-6 .col-lg-4</div>
         </div>
-        <div class="row">
-          <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
-          <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
-          <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+        <div class="frow">
+          <div class="fcol-xs-6 fcol-sm-4">.col-xs-6 .col-sm-4</div>
+          <div class="fcol-xs-6 fcol-sm-4">.col-xs-6 .col-sm-4</div>
+          <div class="fcol-xs-6 fcol-sm-4">.col-xs-6 .col-sm-4</div>
         </div>
       </div>
 
@@ -281,19 +280,19 @@
 
       <h3>Column clearing</h3>
       <p><a href="http://getbootstrap.com/css/#grid-responsive-resets">Clear floats</a> at specific breakpoints to prevent awkward wrapping with uneven content.</p>
-      <div class="row test-fluid-column-clearing">
-        <div class="col-xs-6 col-sm-3">
+      <div class="frow test-fluid-column-clearing">
+        <div class="fcol-xs-6 fcol-sm-3">
           .col-xs-6 .col-sm-3
           <br>
           Resize your viewport or check it out on your phone for an example.
         </div>
-        <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+        <div class="fcol-xs-6 fcol-sm-3">.col-xs-6 .col-sm-3</div>
 
         <!-- Add the extra clearfix for only the required viewport -->
         <div class="clearfix visible-xs"></div>
 
-        <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
-        <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+        <div class="fcol-xs-6 fcol-sm-3">.col-xs-6 .col-sm-3</div>
+        <div class="fcol-xs-6 fcol-sm-3">.col-xs-6 .col-sm-3</div>
       </div>
 
       <hr>
@@ -301,13 +300,13 @@
       <h3>Offset, push, and pull resets</h3>
       <p>Reset offsets, pushes, and pulls at specific breakpoints.</p>
       <div class="test-fluid-offset-push-pull">
-        <div class="row">
-          <div class="col-sm-5 col-md-6">.col-sm-5 .col-md-6</div>
-          <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">.col-sm-5 .col-sm-offset-2 .col-md-6 .col-md-offset-0</div>
+        <div class="frow">
+          <div class="fcol-sm-5 fcol-md-6">.col-sm-5 .col-md-6</div>
+          <div class="fcol-sm-5 fcol-sm-offset-2 fcol-md-6 fcol-md-offset-0">.col-sm-5 .col-sm-offset-2 .col-md-6 .col-md-offset-0</div>
         </div>
-        <div class="row">
-          <div class="col-sm-6 col-md-5 col-lg-6">.col-sm-6 .col-md-5 .col-lg-6</div>
-          <div class="col-sm-6 col-md-5 col-md-offset-2 col-lg-6 col-lg-offset-0">.col-sm-6 .col-md-5 .col-md-offset-2 .col-lg-6 .col-lg-offset-0</div>
+        <div class="frow">
+          <div class="fcol-sm-6 fcol-md-5 fcol-lg-6">.col-sm-6 .col-md-5 .col-lg-6</div>
+          <div class="fcol-sm-6 fcol-md-5 fcol-md-offset-2 fcol-lg-6 fcol-lg-offset-0">.col-sm-6 .col-md-5 .col-md-offset-2 .col-lg-6 .col-lg-offset-0</div>
         </div>
       </div>
 
@@ -315,24 +314,24 @@
 
       <h3>Column wrapping</h3>
       <p>If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.</p>
-      <div class="row test-fluid-column-wrapping">
-        <div class="col-xs-9">.col-xs-9</div>
-        <div class="col-xs-4">.col-xs-4<br>Since 9 + 4 = 13 &gt; 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.</div>
-        <div class="col-xs-6">.col-xs-6<br>Subsequent columns continue along the new line.</div>
+      <div class="frow test-fluid-column-wrapping">
+        <div class="fcol-xs-9">.col-xs-9</div>
+        <div class="fcol-xs-4">.col-xs-4<br>Since 9 + 4 = 13 &gt; 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.</div>
+        <div class="fcol-xs-6">.col-xs-6<br>Subsequent columns continue along the new line.</div>
       </div>
 
       <hr>
 
       <h3>Nesting columns</h3>
       <p>To nest your content with the default grid, add a new <code>.row</code> and set of <code>.col-sm-*</code> columns within an existing <code>.col-sm-*</code> column. Nested rows should include a set of columns that add up to 12 or less (it is not required that you use all 12 available columns).</p>
-      <div class="row test-fluid-nesting-columns">
-        <div class="col-sm-9">
+      <div class="frow test-fluid-nesting-columns">
+        <div class="fcol-sm-9">
           Level 1: .col-sm-9
-          <div class="row">
-            <div class="col-xs-8 col-sm-6">
+          <div class="frow">
+            <div class="fcol-xs-8 fcol-sm-6">
               Level 2: .col-xs-8 .col-sm-6
             </div>
-            <div class="col-xs-4 col-sm-6">
+            <div class="fcol-xs-4 fcol-sm-6">
               Level 2: .col-xs-4 .col-sm-6
             </div>
           </div>
@@ -343,14 +342,14 @@
 
       <h3>Column ordering</h3>
       <p>Easily change the order of our built-in grid columns with <code>.col-md-push-*</code> and <code>.col-md-pull-*</code> modifier classes.</p>
-      <div class="row test-fluid-column-ordering">
-        <div class="col-md-4 col-md-push-4">B</div>
-        <div class="col-md-4 col-md-pull-4 col-sm-6">A</div>
-        <div class="col-md-4 col-sm-6">C</div>
+      <div class="frow test-fluid-column-ordering">
+        <div class="fcol-md-4 fcol-md-push-4">B</div>
+        <div class="fcol-md-4 fcol-md-pull-4 fcol-sm-6">A</div>
+        <div class="fcol-md-4 fcol-sm-6">C</div>
       </div>
 
 
-    </div> <!-- /container-fluid -->
+    </div> <!-- /fcontainer-fluid -->
 
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
