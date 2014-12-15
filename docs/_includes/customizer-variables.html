@@ -661,6 +661,31 @@
     <p id="help-block-@grid-float-breakpoint-max" class="help-block">Point at which the navbar begins collapsing.</p>
   </div>
 </div>
+<h2 id="flexbox-grid-system">Flexbox Grid system</h2>
+<p>Define your custom responsive grid.</p>
+<div class="row">
+  <div class="col-xs-4">
+    <label for="input-@fgrid-columns">@fgrid-columns</label>
+    <input id="input-@fgrid-columns" type="text" aria-describedby="help-block-@fgrid-columns" value="12" data-var="@fgrid-columns" class="form-control"/>
+    <p id="help-block-@fgrid-columns" class="help-block">Number of columns in the grid.</p>
+  </div>
+  <div class="col-xs-4">
+    <label for="input-@fgrid-gutter-width">@fgrid-gutter-width</label>
+    <input id="input-@fgrid-gutter-width" type="text" aria-describedby="help-block-@fgrid-gutter-width" value="30px" data-var="@fgrid-gutter-width" class="form-control"/>
+    <p id="help-block-@fgrid-gutter-width" class="help-block">Padding between columns. Gets divided in half for the left and right.</p>
+  </div>
+  <div class="col-xs-4">
+    <label for="input-@fgrid-float-breakpoint">@fgrid-float-breakpoint</label>
+    <input id="input-@fgrid-float-breakpoint" type="text" aria-describedby="help-block-@fgrid-float-breakpoint" value="@screen-sm-min" data-var="@fgrid-float-breakpoint" class="form-control"/>
+    <p id="help-block-@fgrid-float-breakpoint" class="help-block">Point at which the navbar becomes uncollapsed.</p>
+  </div>
+  <div class="clearfix"></div>
+  <div class="col-xs-4">
+    <label for="input-@fgrid-float-breakpoint-max">@fgrid-float-breakpoint-max</label>
+    <input id="input-@fgrid-float-breakpoint-max" type="text" aria-describedby="help-block-@fgrid-float-breakpoint-max" value="(@fgrid-float-breakpoint - 1)" data-var="@fgrid-float-breakpoint-max" class="form-control"/>
+    <p id="help-block-@fgrid-float-breakpoint-max" class="help-block">Point at which the navbar begins collapsing.</p>
+  </div>
+</div>
 <h2 id="container-sizes">Container sizes</h2>
 <p>Define the maximum width of <code>.container</code> for different screen sizes.</p>
 <div class="row">
